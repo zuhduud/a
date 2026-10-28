@@ -20,7 +20,7 @@ public class CustomMusicMod {
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
-        MusicManager.INSTANCE.init(new File(Minecraft.getMinecraft().mcDataDir, "custom_music"));
+        MusicManager.INSTANCE.init(new File(Minecraft.getMinecraft().gameDir, "custom_music"));
         openKey = new KeyBinding("key.custommusic.open", Keyboard.KEY_M, "key.categories.custommusic");
         ClientRegistry.registerKeyBinding(openKey);
         MinecraftForge.EVENT_BUS.register(this);
