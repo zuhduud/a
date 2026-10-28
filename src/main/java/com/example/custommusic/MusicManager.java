@@ -117,19 +117,18 @@ public class MusicManager {
     }
 
     private class PausableDevice extends JavaSoundAudioDevice {
-        @Override
+                @Override
         protected void writeImpl(short[] samples, int offs, int len) throws JavaLayerException {
             synchronized (pauseLock) {
                 while (paused && playing) {
                     try { pauseLock.wait(100); } catch (InterruptedException e) { return; }
                 }
             }
+            float v = volume;
+            for (int i = offs; i < offs + len; i++) {
+                samples[i] = (short) (samples[i] * v);
+            }
             super.writeImpl(samples, offs, len);
-            try {
-                float v = Math.max(volume, 0.0001f);
-                float db = (float) (20.0 * Math.log10(v));
-                setLineGain(Math.max(db, -70f));
-            } catch (Throwable ignored) { }
         }
     }
 }
