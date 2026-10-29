@@ -1,7 +1,0 @@
-[{
-  "modid": "custommusic",
-  "name": "Custom Music Player",
-  "description": "Проигрывание своих mp3 файлов. Клавиша M открывает плеер.",
-  "version": "1.0.0",
-  "mcversion": "1.12.2"
-}]
