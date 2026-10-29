@@ -1,0 +1,7 @@
+[{
+  "modid": "custommusic",
+  "name": "Custom Music Player",
+  "description": "Проигрывание своих mp3 файлов. Клавиша M открывает плеер с поиском, перемоткой и громкостью.",
+  "version": "1.1.0",
+  "mcversion": "1.12.2"
+}]
